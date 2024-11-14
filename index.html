@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LMS Login</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .eye-icon {
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function togglePasswordVisibilityy() {
+      var passwordField = document.getElementById("password");
+      var toggleIcon = document.getElementById("togglePassword");
+      if (passwordField.type === "password") {
+        passwordField.type = "text";
+        toggleIcon.innerHTML = "&#128064;"; // Change eye icon to hide password
+      } else {
+        passwordField.type = "password";
+        toggleIcon.innerHTML = "&#128065;"; // Change eye icon to show password
+      }
+    }
+  </script>
+</head>
+<body>
+  <div style="display: flex; justify-content: center;">
+    <nav class="header">
+        <img src="LEREN - logo1.png" width="120" height="120">
+        <img src="LEREN - logo11.png" width="1200" height="120">
+        <ul class="nav-links">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          
+        </ul>
+    </nav>
+  <div class="login-container" style="margin-top: 200px;">
+    <h2><center>Login to LMS</center></h2>
+    <form action="login1.php" method="post" onsubmit="return validateForm()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="news-container">
+        <ul id="news-list">
+          <li>Today is day order 1</li>
+          <li>Sports day will be on March 25</li>
+          <li>Last date for exam registration : 30 March</li>
+        </ul>
+      </div>
+      <div class="password-field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+        <span id="togglePassword" class="eye-icon" onclick="togglePasswordVisibilityy()">&#128065;</span>
+      </div>
+      <div class="form-group">
+        <label for="role">Role: </label>
+        <select id="role" name="role" required> <!-- Change input type to select -->
+          <option value="">Select Role</option>
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+        </select>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  </div>
+</body>
+</html>
